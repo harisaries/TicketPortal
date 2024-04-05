@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/select/1.2.7/css/select.bootstrap.min.css" />
+    
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap.min.js"></script>
+    <script src="https://cdn.datatables.net/select/1.2.7/js/dataTables.select.min.js"></script>
+</head>
+<body>
+    <table border="1" id="table" class="table table-striped table-bordered" style="width:100%;font-size:smaller">
+        <tr class="even selected">
+            <th>1</th>
+            <th>2</th>
+            <th>3</th>
+        </tr>
+        <tr>
+            <th>a</th>
+            <th>b</th>
+            <th>c</th>
+        </tr>
+    </table>
+    <input type="text" id="num" />
+    <input type="text" id="alpha" />
+    <script type="text/javascript">
+        var table = document.getElementById('table'), rIndex;
+        for (var i = 0; i < table.rows.length; i++) {
+            table.rows[i].onclick = function () {
+                rIndex = this.rowsIndex;
+                console.log(rIndex);
+                document.getElementById("num").value = this.cells[0].innerHTML;
+
+                
+            }
+        }
+        $(document).ready(function () {
+            $('#table').DataTable({
+                select: true
+            });
+        });
+
+
+
+    </script>
+</body>
+</html>
